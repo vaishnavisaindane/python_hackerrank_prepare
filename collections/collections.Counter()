@@ -1,0 +1,14 @@
+from collections import Counter
+x=int(input())
+s_size=list(map(int, input().split()))
+n=int(input())
+counter_of_s=Counter(s_size)
+total=0
+for i in range(n):
+    size, price=list(map(int, input().split()))
+    if size in counter_of_s.keys():
+        if counter_of_s[size]>0:
+            total=total+price
+        counter_of_s[size]=counter_of_s[size]-1
+print(total)
+    
